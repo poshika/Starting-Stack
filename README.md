@@ -1,6 +1,6 @@
-#REACT-FLUX
+#STARTING-STACK
 
-### Training React and Flux architecture pattern. :D
+### Training some tools
 
 GETTING STARTED
 ========
