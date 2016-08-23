@@ -43,16 +43,20 @@ Algumas frases que encontrei no caminho da pesquisa...
 
 > *"To read Angular: Learn a long list of Angular-specific syntax. To read React: Learn JavaScript."*
 
-#### Size
+Size
+========
+
 * Angular 2: 566k (766k with RxJS)
 * Ember: 435k
 * Angular 1: 143k
 * React + Redux: 139k
 
-#### Performance
+Performance
+===========
+
 Segue um link para o site do [auth0](https://auth0.com/blog/more-benchmarks-virtual-dom-vs-angular-12-vs-mithril-js-vs-the-rest/), com detalhes da comparação.
 
-Stack Pré-definido
+Stack
 ==============
 
 * [React](https://facebook.github.io/react/) (Interface Builder)
