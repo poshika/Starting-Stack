@@ -10,7 +10,6 @@ var currencyData = {};
 
 function setCurrencyData(data) {
   currencyData = data;
-  console.log(currencyData)
 }
 
 class CurrencyStore extends EventEmitter {

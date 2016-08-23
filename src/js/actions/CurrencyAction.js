@@ -13,13 +13,13 @@ function getInstance(){
   });
 }
 
-export function getInfo() {
+export function getInfo(valueBase) {
   const instance = getInstance();
   var path = '';
 
-  /*if (valueBase !== '') {
+  if (valueBase !== '') {
     path += '?base=' + valueBase;
-  }*/
+  }
 
   instance.get('/latest' + path).then(response => {
     Dispatcher.dispatch({

@@ -23,7 +23,7 @@ export default class About extends React.Component {
   }
 
   getAPIInfo(){
-    CurrencyAction.getInfo();
+    CurrencyAction.getInfo(this.refs.inputCurrency.value);
   }
 
   componentWillMount() {
