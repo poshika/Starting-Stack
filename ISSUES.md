@@ -1,106 +1,66 @@
-Consolidação:
+# Consolidação
 
+ - Cachemento inconsistente
+ > Verificar de usar cacheamento apenas quando realmente necessário.
+ > Usar aerospike?
 
--Performance:
--Não escalável
--Sticky session
--Memory leaks
--Loops infinitos
-	-Cachemento inconsistente
-	-Imagens pesadas
+ - Imagens pesadas
+ > Pesquisar libs responsáveis a fazer isso (seja backend ou frontend)
 
--Mantenabilidade/Padronização/Componentização/Produtividade:
--JSP/JS/CSS zoneado
--HTML misturado com muita logica
--Manipulação de várias linguagens (JSTL + JS + JAVA)
--Hibernate + JDBC
--Manutenação demorada
--i18n em input hidden (extra) / i18n em message.properties no b.e. (site)
-	-”Refazer a roda” pela falta de frameworks
-	-Controle de autorização por ‘paginas’ html
-	-Falta padronização (identação, nomenclatura)
-	-Backend com metodos replicados e confuso
-	-Má utilização dos verbos HTTP
-	-Gde acoplamento entre os modulos do site
-	-Dificil implementação de Analytics (site / extra nem tem)
-	-Modelo de persistencia mto verboso
-		-Mto código para manipular model
-	-Timezone no backend: java calendar (site)
-	-White-labeling (site)
-	-Documentação dos endpoints inexistentes
-	-SEO e URLs com parametros de busca (ex cidades/estado) (site)
+- JSP/JS/CSS zoneado
+- HTML misturado com muita logica
+- Manipulação de várias linguagens (JSTL + JS + JAVA)
+- Hibernate + JDBC
+- Manutenação demorada
+> React trás o CDD (Component Driven Development). Isso suprirá problemas
+> de organização de código, desde que bem implementado.
 
--Qualidade:
--Não tem testes automatizados e consistentes
+- i18n em input hidden (extra) / i18n em message.properties no b.e. (site)
+> Yahoo tem o [react-intl](https://github.com/yahoo/react-intl).
+
+- ”Refazer a roda” pela falta de frameworks
+> Exatamente por isso estamos nesta reunião. Definição de frameworks/ferramentas
+- Controle de autorização por ‘paginas’ html
+> Arquitetar uma forma ideal de permissionamento.
+
+- Falta padronização (identação, nomenclatura)
+> Adotar padrões de documentação
+
+- Documentação dos endpoints inexistentes
+> Swagger? Documentação essencial.
+
+- Não tem testes automatizados e consistentes
 	-Layout inconsistente, com falhas e bugs
+> Jasmine, Jest parecem ser boas ferramentas de teste unitário.
 
--Produto:
--Má implementação de funcionalidades para comunicação com restaurantes:
--resultados / kpis
--iteraçao/comunicação (realtime ou nao)
--informativos
--pesquisas/questionarios inexistentes
-	-Restaurante + Operação (com necessidades diferentes) utilizando as mesma telas
+- Má implementação de funcionalidades para comunicação com restaurantes:
+> Implementação de um blog e/ou chat vai ser incrível.
 
+React vs Angular 2 vs Whatever
+==============
+Algumas frases que encontrei no caminho da pesquisa...
+> "Angular 2 continues to put “JS” into HTML. React puts “HTML” into JS."
 
+> To read Angular: Learn a long list of Angular-specific syntax. To read React: Learn JavaScript.
 
+#### Size
+* Angular 2: 566k (766k with RxJS)
+* Ember: 435k
+* Angular 1: 143k
+* React + Redux: 139k
 
+#### Performance
+Segue um link para o site do [auth0](https://auth0.com/blog/more-benchmarks-virtual-dom-vs-angular-12-vs-mithril-js-vs-the-rest/), com detalhes da comparação.
 
+Stack Pré-definido
+==============
 
-
-Poshika:
--Não escalável
--Sticky session
--Memories leak
--Loops infinitos
--Sem padroes bem definidos
--Hibernate + JDBC
--JSP/JS/CSS zoneado
--Manutenção demorada
--Não tem testes automatizados
--Má implementação de funcionalidades para comunicação com restaurantes:
--resultados / kpis
--iteraçao/comunicação (realtime ou nao)
--informativos
--pesquisas/questionarios inexistentes
-
-
-Igor:
-.Manutenção
-.Internacionalização usando input hidden
-.Inconsistência de Layout (ex popups quebrados)
-.Em alguns lugares, o 'cacheamento' de informações traziam inconsistências por não ser atualizado corretamente quando deveria
-.A falta de ferramentas e frameworks traziam à tona a necessidade de 'refazer a roda' (as vezes errado) diversas vezes
-.Imagens muito pesadas (algo poderia ser feito para suprir esse problema)
-.Ter restaurante + operação num mesmo sistema não tem sentido
-.Arquitetura de permissionamento ruim (paginas.containsKey('paginaTeste') faz a verificação da permissão do meu perfil para entrar... tipo...)
-.Falta de padronização de código. Desde identação até nomenclatura/linguagem de nome de método e variáveis.
-.Backend com muito método replicado e muitas vezes confuso. Falta de boas práticas muitas vezes
- .Inexistência de alguma ferramenta de teste para validação automatizada e consistente (isso é sim, importante)
-.Uso incorreto dos verbos http nas chamadas de endpoint (um restful de verdade supre)
-.Tem mais coisa... mas não lembro agora...
-
-Medina:
-* Difícil manutenção de código para desenvolvedores
-* Difícil entendimento do layout para designers/leigos (HTML misturado com muita lógica)
-* Grande acoplamento entre os "módulos" do site > Muito "amarrado"
-* Implementação de tracking dificultada
-* Modelo de persistência de dados entre páginas verboso/muito complicado
-* Muito código para manipular model
-* Necessidade de manipulação de várias linguagens, JSTL, JS, JAVA
-
-
-
-
-Guto:
-- Como tratar problemas de timezone. Tratamos no Java (Calendar)
-- Internaciolização i18n.  Se vamos conseguir utilizar da forma que utilizamos hj (message.properties), ou vamos manter tudo via json e se temos um plugin (resource buddle) para ajudar na organização e agilidade do processo.
-- Segurança/Autenticação. Segurança, trafegar os dados, se temos como criptografar isso no client.
-- Mesmo código funcionando em domínios diferentes, caso do comeya, vamos utilizar os "IFs" no client mesmo?
-- Documentação dos serviços (endpoints) do V3.
-- Solução para SEO sem gambiarras, caso isso se consolide como estrutura para o site em algum momento. Não existe um suporte muito bem elaborado para sites com frameworks JS, é um dos grandes problemas atuais, o Google ainda não resolveu muito bem essa questão, mas valem pesquisas se temos como manter um padrão alto sem prejudicar o SEO.
-- Me preocupo com as rotas, precisamos de um plugin bem simples de rotas e redirects, pois atualmente no site temos city/state, que é algo bem flexível.
-- URL com parametros para buscas e compartilhamento de links. Vamos sempre utilizar URL para chegar em diversos conteúdos. Minha dúvida é se vamos conseguir tratar essas entradas (parametros de busca) por exemplo. Essa parte é mais uma dúvida de como funciona mesmo.
-- Testes unitários faremos? (Jasmine)
-- Qual forma vamos utilizar para esconder as configs de chamada para o V3?
-- Como vamos limitar os usuários a ter acesso a nossa base de restaurantes e cardapio de forma mt simples? (segurança das informações)
+* [React](https://facebook.github.io/react/) (Interface Builder)
+* [React-router](https://github.com/reactjs/react-router) (Router)
+* [Flux](http://facebook.github.io/flux/) (Architecture Pattern)
+* [Babel](https://babeljs.io/) (ES6)
+* HTML5
+* [Webpack](https://webpack.github.io/) (Module Bundler)
+* [Lodash](https://lodash.com/) (Library modularity, iterating arrays/object without jQuery)
+* Bootstrap
+* [Axios](https://github.com/mzabriskie/axios) (HTTP Client)
