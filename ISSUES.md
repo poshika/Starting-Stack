@@ -39,9 +39,9 @@
 React vs Angular 2 vs Whatever
 ==============
 Algumas frases que encontrei no caminho da pesquisa...
-> "Angular 2 continues to put “JS” into HTML. React puts “HTML” into JS."
+> *"Angular 2 continues to put “JS” into HTML. React puts “HTML” into JS."*
 
-> To read Angular: Learn a long list of Angular-specific syntax. To read React: Learn JavaScript.
+> *"To read Angular: Learn a long list of Angular-specific syntax. To read React: Learn JavaScript."*
 
 #### Size
 * Angular 2: 566k (766k with RxJS)
