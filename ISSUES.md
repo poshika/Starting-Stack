@@ -2,15 +2,15 @@
 
  - Cachemento inconsistente
  > Verificar de usar cacheamento apenas quando realmente necessário.
- > Usar aerospike?
+ > Usar aerospike? ESTUDAR CACHE LOCAL E DISTRIBUIDO
 
  - Imagens pesadas
- > Pesquisar libs responsáveis a fazer isso (seja backend ou frontend)
+ > Pesquisar libs responsáveis a fazer isso (seja backend ou frontend) ALGUNS DOS COMPONENTES JS TASK RUNNER (WEBPACK/GULP/SEILA) FAZ ISSO
 
 - JSP/JS/CSS zoneado
 - HTML misturado com muita logica
 - Manipulação de várias linguagens (JSTL + JS + JAVA)
-- Hibernate + JDBC
+- Hibernate + JDBC *BACKEND
 - Manutenação demorada
 > React trás o CDD (Component Driven Development). Isso suprirá problemas
 > de organização de código, desde que bem implementado.
@@ -21,20 +21,22 @@
 - ”Refazer a roda” pela falta de frameworks
 > Exatamente por isso estamos nesta reunião. Definição de frameworks/ferramentas
 - Controle de autorização por ‘paginas’ html
-> Arquitetar uma forma ideal de permissionamento.
+> Arquitetar uma forma ideal de permissionamento. TALVEZ DEIXAR ISSO AQUI PENDENTE! VAMOS ESTUDAR UM SERVICO PARA GERENCIAR TD ISSO
 
 - Falta padronização (identação, nomenclatura)
-> Adotar padrões de documentação
+> Adotar padrões de documentação SERIA LEGAL CRIARMOS UMA DOC DE GUIDELINE (BIBLIA) COM ARQUITETURA, PADROES, ETC. (IDEIA INICIAL = CRIAR UM SITE NO GOOGLE)
 
 - Documentação dos endpoints inexistentes
-> Swagger? Documentação essencial.
+> Swagger? Documentação essencial. *BACKEND
 
 - Não tem testes automatizados e consistentes
 	-Layout inconsistente, com falhas e bugs
-> Jasmine, Jest parecem ser boas ferramentas de teste unitário.
+> Jasmine, Jest parecem ser boas ferramentas de teste unitário. VER TBM FWK PARA TESTES DE INTERFACE (TIPO BROWSERSYNC)
 
 - Má implementação de funcionalidades para comunicação com restaurantes:
-> Implementação de um blog e/ou chat vai ser incrível.
+> Implementação de um blog e/ou chat vai ser incrível. 
+> O FOCO AQUI É ARQUITETURA! NÃO IREMOS IMPLEMENTAR ESSES TEMOS QUE CONSIDERAR QUE ARQUITETURA TENHA QUE SER ROBUSTA PARA PERMITIR QUE COMPONENTE EXTERNOS POSSAM SER 'PLUGADOS'/UTILIZADOS NO PARTNER CENTER. 
+> MSM ACONTENCE COM O PROB "Operação BKO + Operação Restaurante + Dono Restaurante (com necessidades diferentes) utilizando as mesma telas"
 
 React vs Angular 2 vs Whatever
 ==============
